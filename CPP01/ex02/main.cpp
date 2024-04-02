@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:37:13 by martorre          #+#    #+#             */
-/*   Updated: 2024/03/28 12:53:58 by martorre         ###   ########.fr       */
+/*   Updated: 2024/04/02 15:06:14 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,4 @@ int main()
     std::cout << "Memory address of str: " << str << std::endl;
     std::cout << "Memory address of strPTR: " << *stringPTR << std::endl;
     std::cout << "Memory address of strREF: " << stringREF << std::endl;
-
 }
