@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:04:33 by martorre          #+#    #+#             */
-/*   Updated: 2024/04/24 16:13:13 by martorre         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:12:56 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,8 @@ void	Fixed::setRawBits( int const raw)
 
 float   Fixed::toFloat( void ) const
 {
-    return (_raw_value / (1 << _fractional_bits));
+    return (static_cast<float>(getRawBits()) / (1 << _fractional_bits));
+    //return (_raw_value / (1 << _fractional_bits));
 };
 
 int     Fixed::toInt( void ) const
