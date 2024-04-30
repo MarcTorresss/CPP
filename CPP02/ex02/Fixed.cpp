@@ -6,13 +6,13 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:04:33 by martorre          #+#    #+#             */
-/*   Updated: 2024/04/29 17:06:21 by martorre         ###   ########.fr       */
+/*   Updated: 2024/04/30 12:20:47 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed(): _raw_value(0)
+Fixed::Fixed(): _rawValue(0)
 {
 
 }
@@ -24,24 +24,24 @@ Fixed::Fixed(const Fixed &fixed)
 
 Fixed::Fixed(const int num)
 {
-    _raw_value = num << _fractionalBits;
+    _rawValue = num << _fractionalBits;
 }
 
 Fixed::Fixed(const float num)
 {
-    _raw_value = roundf(num * (1 << _fractionalBits));
+    _rawValue = roundf(num * (1 << _fractionalBits));
 }
 
 int	Fixed::getRawBits() const
 {
-    return (_raw_value);
+    return (_rawValue);
 }
 
 Fixed   &Fixed::operator=(const Fixed &other)
 {
     if (this == &other)
         return (*this);
-    this->_raw_value = other.getRawBits();
+    this->_rawValue = other.getRawBits();
     return (*this);        
 }
 
@@ -57,48 +57,48 @@ Fixed::~Fixed()
 
 void	Fixed::setRawBits( int const raw)
 {
-	_raw_value = raw;
+	_rawValue = raw;
 }
 
 float   Fixed::toFloat( void ) const
 {
-    return static_cast<float>(_raw_value) / (1 << _fractionalBits);
-    //return (_raw_value / (1 << _fractionalBits));
+    return static_cast<float>(_rawValue) / (1 << _fractionalBits);
+    //return (_rawValue / (1 << _fractionalBits));
 };
 
 int     Fixed::toInt( void ) const
 {
-    return (_raw_value >> _fractionalBits);
+    return (_rawValue >> _fractionalBits);
 };
 
 bool	Fixed::operator>(const Fixed &other) const
 {
-	return this->_raw_value > other._raw_value;
+	return this->_rawValue > other._rawValue;
 }
 
 bool	Fixed::operator<(const Fixed &other) const
 {
-	return this->_raw_value < other._raw_value;
+	return this->_rawValue < other._rawValue;
 }
 
 bool	Fixed::operator>=(const Fixed &other) const
 {
-	return this->_raw_value >= other._raw_value;
+	return this->_rawValue >= other._rawValue;
 }
 
 bool	Fixed::operator<=(const Fixed &other) const
 {
-	return this->_raw_value <= other._raw_value;
+	return this->_rawValue <= other._rawValue;
 }
 
 bool	Fixed::operator!=(const Fixed &other) const
 {
-	return this->_raw_value != other._raw_value;
+	return this->_rawValue != other._rawValue;
 }
 
 bool	Fixed::operator==(const Fixed &other) const
 {
-	return this->_raw_value == other._raw_value;
+	return this->_rawValue == other._rawValue;
 }
 
 Fixed	Fixed::operator+(const Fixed &other) const
@@ -130,7 +130,7 @@ Fixed	Fixed::operator++( int )
 
 Fixed	&Fixed::operator++()
 {
-	++_raw_value;
+	++_rawValue;
 	return *this;
 }
 
@@ -144,7 +144,7 @@ Fixed	Fixed::operator--( int )
 
 Fixed	&Fixed::operator--()
 {
-	--_raw_value;
+	--_rawValue;
 	return *this;
 }
 

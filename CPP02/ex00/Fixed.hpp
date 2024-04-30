@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 15:48:57 by martorre          #+#    #+#             */
-/*   Updated: 2024/04/24 13:00:54 by martorre         ###   ########.fr       */
+/*   Updated: 2024/04/30 12:31:33 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 class Fixed{
     private:
-        int					_raw_value;
-        static const int    _fractional_bits = 8;
+        int					_rawValue;
+        static const int    _fractionalBits = 8;
 		
     public:
 		Fixed();

@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:13:53 by martorre          #+#    #+#             */
-/*   Updated: 2024/03/27 17:33:20 by martorre         ###   ########.fr       */
+/*   Updated: 2024/04/15 13:11:11 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ void        Zombie::announce()
 
 Zombie::~Zombie()
 {
-    
+    std::cout << _name << ": I am dead..." << std::endl;
 }

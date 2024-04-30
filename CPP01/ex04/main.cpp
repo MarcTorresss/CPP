@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 15:45:12 by martorre          #+#    #+#             */
-/*   Updated: 2024/04/02 13:02:43 by martorre         ###   ########.fr       */
+/*   Updated: 2024/04/15 11:39:44 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void replaceInFile(std::string& filename, std::string& s1, std::string& s2)
         size_t pos = 0;
         while ((pos = line.find(s1, pos)) != std::string::npos) { //Buscamos s1 en la line a partir de la posicion 
             line = line.substr(0, pos) + s2 + line.substr(pos + s1.length()); // trimeamos antes de encontrar la ocurrencia sumamos la nueva palabra y sumamos el final
-            pos += s2.length(); // actualizamos la pos
+            pos += s2.length();
         }
         outputFile << line << std::endl;
     }
