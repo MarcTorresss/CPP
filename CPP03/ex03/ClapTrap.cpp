@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:56:47 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/02 17:38:32 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/02 17:38:03 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,44 @@ void    ClapTrap::beRepaired(unsigned int amount)
     }
 	else
 		std::cout << "ClapTrap " << _name << " don't have EnergyPoints or HitPoints " << std::endl;
+}
+
+std::string  ClapTrap::getName()
+{
+    return (_name);
+}
+
+int			ClapTrap::getHitPoint()
+{
+    return (_HitPoint);
+}
+	
+int			ClapTrap::getEnergyPoint()
+{
+    return (_EnergyPoint);
+}
+
+int			ClapTrap::getAttackDamage()
+{
+    return (_AttackDamage);
+}
+
+void    ClapTrap::setName( std::string name)
+{
+    _name = name;
+}
+
+void    ClapTrap::setHitPoint( int HitPoint)
+{
+    _HitPoint = HitPoint;
+}
+	
+void    ClapTrap::setEnergyPoint( int EnergyPoints)
+{
+    _EnergyPoint = EnergyPoints;
+}
+
+void    ClapTrap::setAttackDamage( int AttackDamage )
+{
+    _AttackDamage = AttackDamage;
 }
