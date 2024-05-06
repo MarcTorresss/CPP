@@ -6,11 +6,11 @@
 #    By: martorre <martorre@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/20 16:49:33 by martorre          #+#    #+#              #
-#    Updated: 2024/05/02 17:18:30 by martorre         ###   ########.fr        #
+#    Updated: 2024/05/06 13:05:47 by martorre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = FragTrap
+NAME = DiamondTrap
 SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 FLAGS = -std=c++98 -Wall -Wextra -Werror
 DEPFLAGS = -MMD -MP

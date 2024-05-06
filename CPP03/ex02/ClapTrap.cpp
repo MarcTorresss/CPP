@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:56:47 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/02 17:37:44 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/06 13:36:16 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,24 +57,21 @@ void    ClapTrap::attack(const std::string& target)
 
 }
 
-void    ClapTrap::takeDamage(unsigned int amount)
+void    ClapTrap::takeDamage( int amount )
 {
 	if (_EnergyPoint > 0 && _HitPoint > 0)
     {
-		if ((_HitPoint - amount) <= 0)
-		{
-			std::cout << "ClapTrap " << _name << " Is dead!!! " << std::endl;
-			_HitPoint = 0;
-		}
-		else
-		{
-			_HitPoint = _HitPoint - amount;
-    		std::cout << "ClapTrap " << _name << " receive " << amount << ", and now have " << _HitPoint << " points of damage!" << std::endl;
-		}
+        _HitPoint = _HitPoint - amount;
+        std::cout << "ClapTrap " << _name << " receive " << amount << ", and now have " << _HitPoint << " points of damage!" << std::endl;
 	}
+    if ((_HitPoint - amount) <= 0)
+    {
+        std::cout << "ClapTrap " << _name << " Is dead!!! " << std::endl;
+        _HitPoint = 0;
+    }
 }
 
-void    ClapTrap::beRepaired(unsigned int amount)
+void    ClapTrap::beRepaired( int amount )
 {
     if (_EnergyPoint > 0 && _HitPoint > 0)
     {

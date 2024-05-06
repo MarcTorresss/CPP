@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 16:33:44 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/02 17:40:38 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/06 13:02:49 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,5 @@ class FragTrap : virtual public ClapTrap {
 		FragTrap( const FragTrap& );
 		FragTrap	&operator=(const FragTrap &other);
 		~FragTrap();
-		void	attack(const std::string& target);
 		void	highFivesGuys( void );
 };

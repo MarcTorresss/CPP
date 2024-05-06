@@ -6,13 +6,13 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 16:33:40 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/02 17:15:11 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/06 13:03:02 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(): ClapTrap("Scav")
+FragTrap::FragTrap(): ClapTrap("Frag")
 {
     std::cout << "FragTrap Default constructor called" << std::endl;
     _AttackDamage = 30;
@@ -49,17 +49,6 @@ FragTrap&   FragTrap::operator=(const FragTrap& other)
 FragTrap::~FragTrap()
 {
     std::cout << "FragTrap Destructor called" << std::endl;
-}
-
-void    FragTrap::attack(const std::string& target)
-{
-    if (_EnergyPoint > 0 && _HitPoint > 0)
-    {
-        _EnergyPoint--;
-        std::cout << "FragTrap " << _name << " attacks " << target << ", causing" << _AttackDamage << " points of damage!" << std::endl;
-    }
-    else
-        std::cout << "FragTrap " << _name << " can't attack. Not enough energy or hit points" << std::endl;
 }
 
 void    FragTrap::highFivesGuys( void )

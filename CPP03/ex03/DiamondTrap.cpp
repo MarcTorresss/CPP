@@ -6,26 +6,28 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 17:18:34 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/02 17:45:20 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/06 13:03:34 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(): ClapTrap("Scav")
+DiamondTrap::DiamondTrap(): ClapTrap("Diamond_clap_name")
 {
     std::cout << "DiamondTrap Default constructor called" << std::endl;
+    _nameDiamond = "Diamond";
     _AttackDamage = 30;
     _HitPoint = 100;
-    _EnergyPoint = 100;
+    _EnergyPoint = 50;
 }
 
-DiamondTrap::DiamondTrap(std::string name): ClapTrap(name)
+DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name")
 {
     std::cout << "DiamondTrap Constructor Name called" << std::endl;
+    _nameDiamond = name;
     _AttackDamage = 30;
     _HitPoint = 100;
-    _EnergyPoint = 100;
+    _EnergyPoint = 50;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& other)
@@ -39,6 +41,7 @@ DiamondTrap&   DiamondTrap::operator=(const DiamondTrap& other)
     std::cout << "DiamondTrap Copy assignment operator called" << std::endl;
     if (this == &other)
         return *this;
+    this->_nameDiamond = other._nameDiamond;
     this->_AttackDamage = other._AttackDamage;
     this->_EnergyPoint = other._EnergyPoint;
     this->_HitPoint = other._HitPoint;
@@ -51,7 +54,7 @@ DiamondTrap::~DiamondTrap()
     std::cout << "DiamondTrap Destructor called" << std::endl;
 }
 
-void    DiamondTrap::whoAmi( void )
+void    DiamondTrap::whoAmI( void )
 {
-    std::cout << "DiamondTrap " << _name << " Give me five :)))" << std::endl;
+    std::cout << "I am " << _name << std::endl;
 }
