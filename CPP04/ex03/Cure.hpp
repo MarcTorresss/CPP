@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 15:32:41 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/07 11:47:48 by martorre         ###   ########.fr       */
+/*   Created: 2024/05/07 13:47:14 by martorre          #+#    #+#             */
+/*   Updated: 2024/05/07 15:57:10 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 #include <iostream>
 #include <cstring>
+#include "AMateria.hpp"
 
-class Animal{
-    protected:
-        std::string type;
-				
+class Cure : public AMateria
+{
+    private:
+
     public:
-		Animal();
-		Animal( std::string );
-		Animal( const Animal& );
-		Animal	&operator=(const Animal &other);
-		std::string	getType( void ) const;
-		virtual	void	makeSound( void ) const;
-		virtual ~Animal();
+        Cure();
+        Cure( const Cure& );
+		Cure	&operator=(const Cure &other);
+        ~Cure();
 };

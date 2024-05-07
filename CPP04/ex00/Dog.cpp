@@ -6,20 +6,22 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 15:41:45 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/06 18:02:20 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/07 11:53:53 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog(): Animal("defalut")
+Dog::Dog()
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "Dog Default constructor called" << std::endl;
+    type = "Dog";
 }
 
-Dog::Dog( std::string _type): Animal(_type)
+Dog::Dog( std::string _type)
 {
     std::cout << "Constructor Type called" << std::endl;
+    type = _type;
 }
 
 Dog::Dog( const Dog &other )
@@ -44,5 +46,5 @@ void    Dog::makeSound() const
 
 Dog::~Dog()
 {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "Dog Destructor called" << std::endl;
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 15:32:41 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/07 11:47:48 by martorre         ###   ########.fr       */
+/*   Created: 2024/05/07 13:30:49 by martorre          #+#    #+#             */
+/*   Updated: 2024/05/07 15:42:15 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,17 @@
 #include <iostream>
 #include <cstring>
 
-class Animal{
+class AMateria
+{
     protected:
-        std::string type;
-				
+        std::string _type;
     public:
-		Animal();
-		Animal( std::string );
-		Animal( const Animal& );
-		Animal	&operator=(const Animal &other);
-		std::string	getType( void ) const;
-		virtual	void	makeSound( void ) const;
-		virtual ~Animal();
+        AMateria();
+        AMateria( const AMateria& );
+		AMateria	&operator=(const AMateria &other);
+        AMateria(std::string const & type);
+        std::string const & getType() const; //Returns the materia type
+        virtual AMateria* clone() const = 0;
+        virtual void use(ICharacter& target);
+        ~AMateria();
 };

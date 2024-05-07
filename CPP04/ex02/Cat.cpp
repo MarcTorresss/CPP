@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 15:41:45 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/07 11:53:45 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/07 12:35:12 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ Cat::Cat()
 {
     std::cout << "Cat Default constructor called" << std::endl;
     type = "Cat";
+    brain = new Brain();
 }
 
 Cat::Cat( std::string _type)
@@ -47,4 +48,5 @@ void    Cat::makeSound() const
 Cat::~Cat()
 {
     std::cout << "Cat Destructor called" << std::endl;
+    delete brain;
 }
