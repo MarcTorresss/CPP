@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 13:44:13 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/07 13:45:06 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/08 15:41:55 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <iostream>
 #include <cstring>
+#include "AMateria.hpp"
 
 class IMateriaSource
 {

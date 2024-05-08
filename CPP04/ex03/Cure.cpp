@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 15:55:23 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/07 15:58:15 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/08 15:31:12 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 Cure::Cure(): AMateria("cure") {}
 
-Cure( const Cure& other ): AMateria(other) {}
+Cure::Cure( const Cure &other ): AMateria(other) {}
 
-Cure	&operator=(const Cure& other)
+Cure	&Cure::operator=(const Cure& other)
 {
     if (this == &other)
         return *this;
@@ -24,12 +24,12 @@ Cure	&operator=(const Cure& other)
     return *this;
 }
 
-virtual AMateria* clone() const override
+AMateria*   Cure::clone() const
 {
-    return new Cure(*this);
+    return new Cure();
 }
 
-virtual void use(ICharacter& target) override
+void    Cure::use(ICharacter& target)
 {
     std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }

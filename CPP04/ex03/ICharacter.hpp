@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 13:42:54 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/07 13:43:45 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/08 13:21:20 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 #include <iostream>
 #include <cstring>
+#include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {

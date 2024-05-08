@@ -6,17 +6,17 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 15:49:06 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/07 18:03:43 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/08 16:02:40 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-Ice::Ice(): AMateria("Ice") {}
+Ice::Ice(): AMateria("ice") {}
 
-Ice( const Ice& other ): AMateria(other) {}
+Ice::Ice( const Ice& other ): AMateria(other) {}
 
-Ice	&operator=(const Ice& other)
+Ice	&Ice::operator=(const Ice& other)
 {
     if (this == &other)
         return *this;
@@ -24,12 +24,12 @@ Ice	&operator=(const Ice& other)
     return *this;
 }
 
-virtual AMateria* clone() const
+AMateria* Ice::clone() const
 {
-    return new Ice(*this);
+    return new Ice();
 }
 
-virtual void use(ICharacter& target)
+void    Ice::use(ICharacter& target)
 {
     std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }
