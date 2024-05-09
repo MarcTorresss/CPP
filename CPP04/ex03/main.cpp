@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 13:30:11 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/08 17:11:20 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/09 15:40:49 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int main()
     delete bob;
     delete me;
     delete src;
-    
+    delete tmp;
+    // exit(0);
     return 0;
 }

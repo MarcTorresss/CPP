@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 15:41:45 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/07 12:35:08 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/09 12:46:34 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Dog::Dog( const Dog &other )
     std::cout << "Copy constructor called" << std::endl;
 	*this = other;
 }
-
+//checkear
 Dog	&Dog::operator=(const Dog &other)
 {
     std::cout << "Copy assignment operator called" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 13:30:49 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/08 12:35:48 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/09 12:02:38 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ class AMateria
         std::string const & getType() const; //Returns the materia type
         virtual AMateria* clone() const = 0;
         virtual void use(ICharacter& target);
-        ~AMateria();
+        virtual ~AMateria() {}
+        // ~AMateria();
 };

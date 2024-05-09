@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 15:15:11 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/08 17:10:35 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/09 12:28:42 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,6 @@ MateriaSource::~MateriaSource()
     for(int i = 0; i < 4; i++)
     {
         if (_invetory[i])
-            _invetory[i] = NULL;
+            delete _invetory[i];
     }
 }
