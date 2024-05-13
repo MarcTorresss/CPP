@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 13:30:11 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/09 15:40:49 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/13 15:48:06 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int main()
     AMateria* tmp;
     tmp = src->createMateria("ice");
     me->equip(tmp);
+    free(tmp);
     tmp = src->createMateria("cure");
     me->equip(tmp);
 
@@ -39,6 +40,5 @@ int main()
     delete me;
     delete src;
     delete tmp;
-    // exit(0);
     return 0;
 }

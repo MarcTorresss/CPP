@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 15:41:22 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/07 12:34:38 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/13 15:28:55 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ class Cat: public Animal{
 		Brain* brain;
     public:
 		Cat();
-		Cat( std::string );
 		Cat( const Cat& );
 		Cat	&operator=(const Cat &other);
 		void	makeSound() const;

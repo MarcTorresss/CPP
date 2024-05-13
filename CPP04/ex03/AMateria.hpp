@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 13:30:49 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/09 12:02:38 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/13 12:30:42 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,4 @@ class AMateria
         virtual AMateria* clone() const = 0;
         virtual void use(ICharacter& target);
         virtual ~AMateria() {}
-        // ~AMateria();
 };
