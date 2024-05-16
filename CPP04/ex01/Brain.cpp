@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 12:14:38 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/07 12:21:16 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/16 12:16:29 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Brain::Brain( const Brain &other )
 
 Brain	&Brain::operator=(const Brain &other)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
+    std::cout << "Brain Copy assignment operator called" << std::endl;
     if (this == &other)
         return (*this);
     return (*this);   

@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 15:27:20 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/07 11:58:51 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/16 12:04:47 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ int main()
         const WrongAnimal* meta = new WrongAnimal();
         const WrongAnimal* i = new WrongCat();
         std::cout << i->getType() << " " << std::endl;
-        i->makeSound(); //will output the cat sound!
-        meta->makeSound();
+        i->makeSound(); //will output the Animal sound!
+        meta->makeSound(); //will output the Animal sound!
         delete meta;
         delete i;
     }

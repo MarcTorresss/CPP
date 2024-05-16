@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 15:41:45 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/07 11:53:53 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/16 12:02:51 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,19 @@ Dog::Dog()
 
 Dog::Dog( std::string _type)
 {
-    std::cout << "Constructor Type called" << std::endl;
+    std::cout << "Dog Constructor Type called" << std::endl;
     type = _type;
 }
 
 Dog::Dog( const Dog &other )
 {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Dog Copy constructor called" << std::endl;
 	*this = other;
 }
 
 Dog	&Dog::operator=(const Dog &other)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
+    std::cout << "Dog Copy assignment operator called" << std::endl;
     if (this == &other)
         return (*this);
     this->type = other.type;

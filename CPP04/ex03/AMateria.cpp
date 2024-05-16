@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 15:19:01 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/13 15:18:07 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/16 12:46:07 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@ std::string const & AMateria::getType() const
 
 void    AMateria::use(ICharacter& target)
 {
-    std::cout << "default use of" << target.getName() << std::endl;
+    std::cout << "default use of " << target.getName() << std::endl;
 }

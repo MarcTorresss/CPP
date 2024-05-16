@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 15:15:11 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/13 15:48:09 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/16 13:10:11 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void    MateriaSource::learnMateria( AMateria* m )
             break ;
         }
     }
+    delete m;
 }
 
 AMateria*   MateriaSource::createMateria( std::string const & type )

@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 17:43:32 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/07 11:53:39 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/16 12:03:26 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@ Animal::Animal(): type("defalut")
 
 Animal::Animal( std::string _type ): type(_type)
 {
-    std::cout << "Constructor Type called" << std::endl;
+    std::cout << "Animal Constructor Type called" << std::endl;
 }
 
 Animal::Animal( const Animal &other )
 {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Animal Copy constructor called" << std::endl;
 	*this = other;
 }
 
 Animal	&Animal::operator=( const Animal &other )
 {
-    std::cout << "Copy assignment operator called" << std::endl;
+    std::cout << "Animal Copy assignment operator called" << std::endl;
     if (this == &other)
         return (*this);
     this->type = other.type;
@@ -39,7 +39,7 @@ Animal	&Animal::operator=( const Animal &other )
 
 void    Animal::makeSound( void ) const
 {
-    std::cout << "hnrtfghjj kfufyuybk,gu,yj" << std::endl;
+    std::cout << "Sound of Animal" << std::endl;
 }
 
 std::string Animal::getType( void ) const
