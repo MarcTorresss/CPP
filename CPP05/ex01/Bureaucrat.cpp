@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 18:49:17 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/16 19:09:18 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/21 17:37:56 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@ Bureaucrat::Bureaucrat()
 {
 
 }
-Bureaucrat::Bureaucrat( std::string )
+Bureaucrat::Bureaucrat( std::string name, int grade ): _name(name), _grade(grade)
 {
-
+	if (grade > 150)
+		throw GradeTooHighException();
+	else if (grade < 1)
+		throw GradeTooLowException();
 }
 
 Bureaucrat::Bureaucrat( const Bureaucrat& )
@@ -27,18 +30,47 @@ Bureaucrat::Bureaucrat( const Bureaucrat& )
 }
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &other)
 {
-
+    std::cout << "Copy assignment operator called" << std::endl;
+    if (this == &other)
+        return (*this);
+	// this->_name = other._name;
+    this->_grade = other._grade;
+    return (*this);   
 }
 
 std::string Bureaucrat::getName( void ) const
 {
-
+	return _name;
 }
 
 int Bureaucrat::getGrade( void )
 {
+	return _grade;
+}
+
+void	Bureaucrat::incrementGrade( void )
+{
+	_grade++;
+	if (_grade > 150)
+		throw GradeTooHighException();
+}
+
+void	Bureaucrat::decrementGrade( void )
+{
+	_grade--;
+	if (_grade < 1)
+		throw GradeTooLowException();
+}
+
+void	Bureaucrat::signForm()
+{
+	if (_grade) //mirar que condicion i arreglar los prints
+		std::cout << _name << "signed" << "FORM???" << std::endl;
+	else
+		std::cout << _name << "couldn 't signed" << "FORM???" << "because" << "X reason" << std::endl;
 
 }
+
 Bureaucrat::~Bureaucrat()
 {
     

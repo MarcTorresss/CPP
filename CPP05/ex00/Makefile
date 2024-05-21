@@ -6,13 +6,13 @@
 #    By: martorre <martorre@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/20 16:49:33 by martorre          #+#    #+#              #
-#    Updated: 2024/05/15 16:08:40 by martorre         ###   ########.fr        #
+#    Updated: 2024/05/21 16:13:40 by martorre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = polymorphism
-SRC = main.cpp Bureaucrat.hpp Bureaucrat.cpp
-FLAGS = -std=c++98 -Wall -Wextra -Werror #-fsanitize=address
+NAME = Bureaucrat
+SRC = main.cpp Bureaucrat.cpp
+FLAGS = -std=c++98 -Wall -Wextra -Werror -fsanitize=address
 DEPFLAGS = -MMD -MP
 DIR_OBJS = objs/
 OBJS = $(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))
