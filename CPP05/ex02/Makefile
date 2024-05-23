@@ -6,12 +6,12 @@
 #    By: martorre <martorre@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/20 16:49:33 by martorre          #+#    #+#              #
-#    Updated: 2024/05/22 13:05:20 by martorre         ###   ########.fr        #
+#    Updated: 2024/05/22 16:30:34 by martorre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Bureaucrat
-SRC = main.cpp Bureaucrat.cpp Form.cpp
+SRC = main.cpp AForm.cpp PresidentialPardonForm.cpp Bureaucrat.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 FLAGS = -std=c++98 -Wall -Wextra -Werror -fsanitize=address
 DEPFLAGS = -MMD -MP
 DIR_OBJS = objs/

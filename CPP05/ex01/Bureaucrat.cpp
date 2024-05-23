@@ -6,11 +6,12 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 18:49:17 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/21 17:37:56 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/22 16:25:16 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat()
 {
@@ -24,9 +25,9 @@ Bureaucrat::Bureaucrat( std::string name, int grade ): _name(name), _grade(grade
 		throw GradeTooLowException();
 }
 
-Bureaucrat::Bureaucrat( const Bureaucrat& )
+Bureaucrat::Bureaucrat( const Bureaucrat &other )
 {
-
+	*this = other;
 }
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &other)
 {
@@ -62,13 +63,17 @@ void	Bureaucrat::decrementGrade( void )
 		throw GradeTooLowException();
 }
 
-void	Bureaucrat::signForm()
+void	Bureaucrat::signForm( Form f )
 {
-	if (_grade) //mirar que condicion i arreglar los prints
-		std::cout << _name << "signed" << "FORM???" << std::endl;
-	else
-		std::cout << _name << "couldn 't signed" << "FORM???" << "because" << "X reason" << std::endl;
-
+	try
+	{
+		f.beSigned(*this);
+		std::cout << _name << " signed from " << f.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << _name << "couldn 't signed from " << f.getName() << " because " << e.what() << std::endl;
+	}
 }
 
 Bureaucrat::~Bureaucrat()
