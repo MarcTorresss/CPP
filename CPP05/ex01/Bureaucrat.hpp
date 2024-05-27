@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 16:37:21 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/22 13:08:12 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/27 17:04:39 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Bureaucrat{
 		int			getGrade( void );
 		void	incrementGrade( void );
 		void	decrementGrade( void );
-		void	signForm( Form f );
+		void	signForm( Form &f );
 		
 		~Bureaucrat();
 		

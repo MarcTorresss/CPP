@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 18:49:17 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/22 12:40:08 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/27 15:39:01 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,14 @@ int Bureaucrat::getGrade( void )
 
 void	Bureaucrat::incrementGrade( void )
 {
-	_grade++;
+	_grade--;
 	if (_grade > 150)
 		throw GradeTooHighException();
 }
 
 void	Bureaucrat::decrementGrade( void )
 {
-	_grade--;
+	_grade++;
 	if (_grade < 1)
 		throw GradeTooLowException();
 }
