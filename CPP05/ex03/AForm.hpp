@@ -1,0 +1,63 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/21 16:34:53 by martorre          #+#    #+#             */
+/*   Updated: 2024/05/27 16:15:14 by martorre         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#pragma once
+
+#include <iostream>
+#include <cstring>
+#include <stdexcept>
+#include "Bureaucrat.hpp"
+
+class Bureaucrat;
+
+class AForm{
+    private:
+        const std::string	_name;
+        bool				_issigned;
+        const int			_gradeSign;
+		const int			_gradeExecute;
+
+    public:
+		AForm();
+		AForm( std::string, int, int );
+		AForm( const AForm& );
+		AForm	&operator=(const AForm &other);
+		std::string		getName( void ) const;
+		int				getGradeSign( void ) const;
+		int				getGradeExecute( void ) const;
+		bool			getIsSigned( void ) const;
+		void			beSigned( Bureaucrat );
+    	void			execute(Bureaucrat const & executor) const;
+		virtual	void	executeForm( void ) const = 0; 
+		std::string		printStatus() const;
+		~AForm();
+		class GradeTooHighException : public std::exception {
+			public:
+				const char* what () const throw() {
+				return "Grade Too High :((";
+			}
+		};
+		class GradeTooLowException : public std::exception {
+			public:
+				const char* what () const throw() {
+				return "Grade Too Low :((";
+			}
+		};
+		class CannotExecute : public std::exception {
+			public:
+				const char* what () const throw() {
+				return "Cannot execute :((";
+			}
+		};
+};
+
+std::ostream& operator<<(std::ostream& out, const AForm& form);
