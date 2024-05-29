@@ -6,12 +6,12 @@
 #    By: martorre <martorre@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/20 16:49:33 by martorre          #+#    #+#              #
-#    Updated: 2024/05/28 16:45:27 by martorre         ###   ########.fr        #
+#    Updated: 2024/05/29 10:39:02 by martorre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Bureaucrat
-SRC = main.cpp
+NAME = scalartypes
+SRC = main.cpp ScalarConverter.cpp
 FLAGS = -std=c++98 -Wall -Wextra -Werror #-fsanitize=address
 DEPFLAGS = -MMD -MP
 DIR_OBJS = objs/

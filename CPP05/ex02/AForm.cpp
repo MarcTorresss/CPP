@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 17:29:03 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/27 17:27:59 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/29 12:17:52 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,6 @@ std::ostream& operator<<(std::ostream& out, const AForm& f)
 
 void    AForm::execute(Bureaucrat const & executor) const
 {
-    std::cout << "burograde " << executor.getGrade() << " minexe " << getGradeSign() << std::endl;
     if (executor.getGrade() < getGradeSign() && _issigned == true)
         executeForm();
     else

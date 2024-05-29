@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 18:49:17 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/27 15:39:01 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/29 12:11:30 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ std::string Bureaucrat::getName( void ) const
 	return _name;
 }
 
-int Bureaucrat::getGrade( void )
+int Bureaucrat::getGrade( void ) const
 {
 	return _grade;
 }
@@ -60,6 +60,14 @@ void	Bureaucrat::decrementGrade( void )
 	_grade++;
 	if (_grade < 1)
 		throw GradeTooLowException();
+}
+
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& b)
+{
+    out << "-----------------" << std::endl
+        << b.getName() << ", bureaucrat grade " << b.getGrade() << std::endl
+        << "-----------------";
+    return out;
 }
 
 Bureaucrat::~Bureaucrat()

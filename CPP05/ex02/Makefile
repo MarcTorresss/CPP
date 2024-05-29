@@ -6,14 +6,14 @@
 #    By: martorre <martorre@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/20 16:49:33 by martorre          #+#    #+#              #
-#    Updated: 2024/05/22 16:30:34 by martorre         ###   ########.fr        #
+#    Updated: 2024/05/29 12:13:01 by martorre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Bureaucrat
 SRC = main.cpp AForm.cpp PresidentialPardonForm.cpp Bureaucrat.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 FLAGS = -std=c++98 -Wall -Wextra -Werror -fsanitize=address
-DEPFLAGS = -MMD -MP
+DEPFLAGS = -MMD
 DIR_OBJS = objs/
 OBJS = $(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))
 DEPS = $(OBJS:.o=.d)

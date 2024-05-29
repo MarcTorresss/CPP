@@ -1,34 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.cpp                                :+:      :+:    :+:   */
+/*   test.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 16:57:54 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/29 17:31:38 by martorre         ###   ########.fr       */
+/*   Created: 2024/05/29 15:25:21 by martorre          #+#    #+#             */
+/*   Updated: 2024/05/29 16:01:42 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
-
-ScalarConverter::ScalarConverter()
-{
-
-}
-
-ScalarConverter::ScalarConverter( const ScalarConverter &other )
-{
-    *this = other;
-}
-
-ScalarConverter	&ScalarConverter::operator=(const ScalarConverter &other)
-{
-    // std::cout << "Copy assignment operator called" << std::endl;
-    if (this == &other)
-        return (*this);
-    return (*this);   
-}
+#include <iostream>
+#include <cctype>
 
 int	ft_isdigit(int c)
 {
@@ -158,7 +141,7 @@ double  ft_double(const std::string& literal)
     return sign * result;
 }
 
-void ft_tochar(const std::string& literal)
+ft_tochar(const std::string& literal)
 {
     if (literal.length() == 1 && ft_isprint(literal[0]) && !ft_isdigit(literal[0]))
     {
@@ -180,68 +163,13 @@ void ft_tochar(const std::string& literal)
     }
 }
 
-static void convertir(const std::string& literal) 
-{
-    try 
-    {
-        // Intentar convertir a int
-        try 
-        {
-            int intValue = ft_atoi(literal);
-            std::cout << "int: " << intValue << std::endl;
-        }
-        catch (const std::exception& e)
-        {
-            std::cout << "int: impossible" << std::endl;
-        }
-
-        // Intentar convertir a float
-        try
-        {
-            float floatValue = ft_atof(literal);
-            if (floatValue == std::numeric_limits<float>::infinity()
-                || floatValue == -std::numeric_limits<float>::infinity() || std::isnan(floatValue))
-            {
-                std::cout << "float: " << floatValue << "f" << std::endl;
-            } 
-            else
-            {
-                std::cout << "float: " << std::fixed << std::setprecision(1) << floatValue << "f" << std::endl;
-            }
-            }
-            catch (const std::exception& e)
-            {
-                std::cout << "float: impossible" << std::endl;
-            }
-
-            // Intentar convertir a double
-            try
-            {
-                double doubleValue = ft_double(literal);
-                if (doubleValue == std::numeric_limits<double>::infinity() || doubleValue == -std::numeric_limits<double>::infinity() || std::isnan(doubleValue))
-                {
-                    std::cout << "double: " << doubleValue << std::endl;
-                }
-                else
-                {
-                    std::cout << "double: " << std::fixed << std::setprecision(1) << doubleValue << std::endl;
-                }
-            }
-            catch (const std::exception& e)
-            {
-                std::cout << "double: impossible" << std::endl;
-            }
-
-            // Intentar convertir a char
-            ft_tochar(literal);
-    } 
-    catch (const std::exception& e)
-    {
-        std::cout << "char: impossible" << std::endl;
-    }
-}
-
-ScalarConverter::~ScalarConverter()
-{
-
+int main() {
+    const char* str = "3.1435165876";
+    float result1 = ft_atof(str);
+    std::cout << "Result float: " << result1 << std::endl;
+    int result2 = ft_atoi(str);
+    std::cout << "Result int : " << result2 << std::endl;
+    double result3 = ft_double(str);
+    std::cout << "Result double: " << result3 << std::endl;
+    return 0;
 }

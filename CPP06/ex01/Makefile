@@ -6,14 +6,14 @@
 #    By: martorre <martorre@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/20 16:49:33 by martorre          #+#    #+#              #
-#    Updated: 2024/05/29 12:13:10 by martorre         ###   ########.fr        #
+#    Updated: 2024/05/29 17:11:02 by martorre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Bureaucrat
-SRC = main.cpp AForm.cpp PresidentialPardonForm.cpp Bureaucrat.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
+NAME = serialization
+SRC = main.cpp Serialization.cpp
 FLAGS = -std=c++98 -Wall -Wextra -Werror #-fsanitize=address
-DEPFLAGS = -MMD
+DEPFLAGS = -MMD -MP
 DIR_OBJS = objs/
 OBJS = $(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))
 DEPS = $(OBJS:.o=.d)

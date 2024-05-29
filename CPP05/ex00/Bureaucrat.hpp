@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 16:37:21 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/22 12:17:01 by martorre         ###   ########.fr       */
+/*   Updated: 2024/05/29 12:10:49 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Bureaucrat{
 		Bureaucrat( const Bureaucrat& );
 		Bureaucrat	&operator=(const Bureaucrat &other);
 		std::string	getName( void ) const;
-		int			getGrade( void );
+		int			getGrade( void ) const;
 		void	incrementGrade( void );
 		void	decrementGrade( void );
 		
@@ -48,3 +48,5 @@ class Bureaucrat{
 			}
 		};
 };
+
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& b);
