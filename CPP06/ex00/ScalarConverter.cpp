@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 16:57:54 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/29 17:31:38 by martorre         ###   ########.fr       */
+/*   Updated: 2024/06/05 16:04:51 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,184 +57,74 @@ int	ft_isprint(int c)
 	return (0);
 }
 
-float ft_atof(const std::string& literal)
+int ft_strlen(const char *str)
 {
-    float result = 0.0f;
-    float sign = 1.0f;
-    float fraction = 1.0f;
-    int i = 0;
+    int i;
 
-    while (ft_isspace(literal[i]))
+    i = 0;
+    if (!str)
+        return 0;
+    while (str)
         i++;
-    if (literal[i] == '-')
+    return i;
+}
+
+void ScalarConverter::convertir(const char *literal) 
+{
+    // Intentar convertir a int
+    try 
     {
-        sign = -1.0f;
-        i++;
+        int intValue = atoi(literal);
+        std::cout << "int: " << intValue << std::endl;
     }
-    else if (literal[i] == '+')
+    catch (std::exception& e)
     {
-        i++;
+        std::cout << "int: impossible" << std::endl;
     }
-    // Convertir parte entera
-    while (ft_isdigit(literal[i]))
+    // Intentar convertir a float
+    try
     {
-        result = result * 10.0f + (literal[i] - '0');
-        i++;
-    }
-    // Convertir parte fraccional
-    if (literal[i] == '.')
-    {
-        i++;
-        while (ft_isdigit(literal[i]))
+        float floatValue = atof(literal);
+        if (floatValue == std::numeric_limits<float>::infinity()
+            || floatValue == -std::numeric_limits<float>::infinity() || std::isnan(floatValue))
         {
-            fraction *= 0.1f;
-            result += fraction * (literal[i] - '0');
-            i++;
+            std::cout << "float: " << floatValue << "f" << std::endl;
+        } 
+        else
+        {
+            std::cout << "float: " << std::fixed << std::setprecision(1) << floatValue << "f" << std::endl;
         }
     }
-
-    return sign * result;
-}
-
-int	ft_atoi(const std::string& literal)
-{
-	int	i;
-	int	result;
-	int	sig;
-
-	i = 0;
-	result = 0;
-	sig = 1;
-    while (ft_isspace(literal[i]))
-        i++;
-	if (literal[i] == '-')
-		sig *= -1;
-	if (literal[i] == '+' || literal[i] == '-')
-		i++;
-	while (literal[i] >= '0' && literal[i] <= '9')
-	{
-		result *= 10;
-		result += (literal[i] - '0');
-		i++;
-	}
-	return (result * sig);
-}
-
-double  ft_double(const std::string& literal)
-{
-    double result = 0.0;
-    double sign = 1.0;
-    double fraction = 1.0;
-    int i = 0;
-
-    while (ft_isspace(literal[i]))
-        i++;
-    if (literal[i] == '-')
+    catch (const std::exception& e)
     {
-        sign = -1.0;
-        i++;
+        std::cout << "float: impossible" << std::endl;
     }
-    else if (literal[i] == '+')
+    // Intentar convertir a double
+    try
     {
-        i++;
-    }
-    // Convertir parte entera
-    while (ft_isdigit(literal[i]))
-    {
-        result = result * 10.0 + (literal[i] - '0');
-        i++;
-    }
-    // Convertir parte fraccional
-    if (literal[i] == '.')
-    {
-        i++;
-        while (ft_isdigit(literal[i]))
+        double doubleValue = atof(literal);
+        if (doubleValue == std::numeric_limits<double>::infinity() || doubleValue == -std::numeric_limits<double>::infinity() || std::isnan(doubleValue))
         {
-            fraction *= 0.1;
-            result += fraction * (literal[i] - '0');
-            i++;
-        }
-    }
-    return sign * result;
-}
-
-void ft_tochar(const std::string& literal)
-{
-    if (literal.length() == 1 && ft_isprint(literal[0]) && !ft_isdigit(literal[0]))
-    {
-       char charValue = literal[0];
-        std::cout << "char: '" << charValue << "'" << std::endl;
-    }
-    else
-    {
-        int intValue = ft_atoi(literal);
-        if (intValue >= 0 && intValue <= 127 && ft_isprint(intValue))
-        {
-            char charValue = static_cast<char>(intValue);
-            std::cout << "char: '" << charValue << "'" << std::endl;
+            std::cout << "double: " << doubleValue << std::endl;
         }
         else
         {
-            std::cout << "char: impossible" << std::endl;
+            std::cout << "double: " << std::fixed << std::setprecision(1) << doubleValue << std::endl;
         }
     }
-}
-
-static void convertir(const std::string& literal) 
-{
-    try 
+    catch (const std::exception& e)
     {
-        // Intentar convertir a int
-        try 
-        {
-            int intValue = ft_atoi(literal);
-            std::cout << "int: " << intValue << std::endl;
-        }
-        catch (const std::exception& e)
-        {
-            std::cout << "int: impossible" << std::endl;
-        }
-
-        // Intentar convertir a float
-        try
-        {
-            float floatValue = ft_atof(literal);
-            if (floatValue == std::numeric_limits<float>::infinity()
-                || floatValue == -std::numeric_limits<float>::infinity() || std::isnan(floatValue))
-            {
-                std::cout << "float: " << floatValue << "f" << std::endl;
-            } 
-            else
-            {
-                std::cout << "float: " << std::fixed << std::setprecision(1) << floatValue << "f" << std::endl;
-            }
-            }
-            catch (const std::exception& e)
-            {
-                std::cout << "float: impossible" << std::endl;
-            }
-
-            // Intentar convertir a double
-            try
-            {
-                double doubleValue = ft_double(literal);
-                if (doubleValue == std::numeric_limits<double>::infinity() || doubleValue == -std::numeric_limits<double>::infinity() || std::isnan(doubleValue))
-                {
-                    std::cout << "double: " << doubleValue << std::endl;
-                }
-                else
-                {
-                    std::cout << "double: " << std::fixed << std::setprecision(1) << doubleValue << std::endl;
-                }
-            }
-            catch (const std::exception& e)
-            {
-                std::cout << "double: impossible" << std::endl;
-            }
-
-            // Intentar convertir a char
-            ft_tochar(literal);
-    } 
+        std::cout << "double: impossible" << std::endl;
+    }
+    // Intentar convertir a char
+    try
+    {
+		std::string s;
+		std::stringstream out;
+		out << literal;
+		s = out.str();
+		std::cout << "char: " << s << std::endl;
+    }
     catch (const std::exception& e)
     {
         std::cout << "char: impossible" << std::endl;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 16:58:01 by martorre          #+#    #+#             */
-/*   Updated: 2024/06/05 16:03:54 by martorre         ###   ########.fr       */
+/*   Created: 2024/06/05 17:19:42 by martorre          #+#    #+#             */
+/*   Updated: 2024/06/05 18:59:31 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,10 @@
 
 #include <iostream>
 #include <string>
-#include <sstream>
-#include <limits>
-#include <cmath>
-#include <iomanip>
+#include "Base.hpp"
 
-class ScalarConverter{
-    private:
-				
+class A: public Base{		
     public:
-		ScalarConverter();
-		ScalarConverter( const ScalarConverter& other );
-		ScalarConverter	&operator=(const ScalarConverter& other);
-		static void convertir(const char *literal);
-		~ScalarConverter();
+        A();
+        virtual ~A();
 };

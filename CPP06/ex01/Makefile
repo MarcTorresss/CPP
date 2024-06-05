@@ -6,14 +6,14 @@
 #    By: martorre <martorre@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/20 16:49:33 by martorre          #+#    #+#              #
-#    Updated: 2024/05/29 17:11:02 by martorre         ###   ########.fr        #
+#    Updated: 2024/06/05 14:23:54 by martorre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = serialization
 SRC = main.cpp Serialization.cpp
 FLAGS = -std=c++98 -Wall -Wextra -Werror #-fsanitize=address
-DEPFLAGS = -MMD -MP
+DEPFLAGS = -MMD
 DIR_OBJS = objs/
 OBJS = $(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))
 DEPS = $(OBJS:.o=.d)

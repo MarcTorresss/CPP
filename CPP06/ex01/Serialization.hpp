@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 17:23:45 by martorre          #+#    #+#             */
-/*   Updated: 2024/05/29 17:26:42 by martorre         ###   ########.fr       */
+/*   Updated: 2024/06/05 17:34:33 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,19 @@
 #include <iostream>
 #include <string>
 
+struct Data
+{
+	int	address;
+};
+
 class Serialization{
     private:
-				
-    public:
 		Serialization();
 		Serialization( const Serialization& );
 		Serialization	&operator=(const Serialization &other);
-        uintptr_t serialize(Data* ptr);
-        Data* deserialize(uintptr_t raw);
-        ~Serialization();
+		ClassBaseClassBase;
+				
+    public:
+		uintptr_t serialize(Data* ptr);
+		Data* deserialize(uintptr_t raw);
 };
