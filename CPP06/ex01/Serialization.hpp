@@ -6,18 +6,17 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 17:23:45 by martorre          #+#    #+#             */
-/*   Updated: 2024/06/05 17:34:33 by martorre         ###   ########.fr       */
+/*   Updated: 2024/06/06 13:12:56 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
-#include <string>
+#include <stdint.h>
 
 struct Data
 {
-	int	address;
+	int	value;
 };
 
 class Serialization{
@@ -25,9 +24,9 @@ class Serialization{
 		Serialization();
 		Serialization( const Serialization& );
 		Serialization	&operator=(const Serialization &other);
-		ClassBaseClassBase;
+		~Serialization();
 				
     public:
-		uintptr_t serialize(Data* ptr);
-		Data* deserialize(uintptr_t raw);
+		static uintptr_t serialize(Data* ptr);
+		static Data* deserialize(uintptr_t raw);
 };

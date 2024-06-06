@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 17:19:42 by martorre          #+#    #+#             */
-/*   Updated: 2024/06/05 18:59:31 by martorre         ###   ########.fr       */
+/*   Updated: 2024/06/06 12:07:51 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,5 @@
 
 class A: public Base{		
     public:
-        A();
         virtual ~A();
 };

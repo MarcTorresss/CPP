@@ -6,12 +6,12 @@
 #    By: martorre <martorre@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/20 16:49:33 by martorre          #+#    #+#              #
-#    Updated: 2024/06/05 17:47:16 by martorre         ###   ########.fr        #
+#    Updated: 2024/06/06 12:11:19 by martorre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = serialization
-SRC = main.cpp Base.cpp A.cpp B.cpp C.cpp
+NAME = IdentifyRealType
+SRC = main.cpp Base.cpp A.cpp B.cpp C.cpp Z.cpp
 FLAGS = -std=c++98 -Wall -Wextra -Werror #-fsanitize=address
 DEPFLAGS = -MMD
 DIR_OBJS = objs/
