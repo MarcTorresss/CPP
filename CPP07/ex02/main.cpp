@@ -6,12 +6,13 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 18:02:32 by martorre          #+#    #+#             */
-/*   Updated: 2024/06/10 18:02:37 by martorre         ###   ########.fr       */
+/*   Updated: 2024/06/11 15:45:09 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <Array.hpp>
+#include <cstdlib>
+#include "Array.hpp"
 
 #define MAX_VAL 750
 int main(int, char**)

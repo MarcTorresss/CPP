@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 16:58:01 by martorre          #+#    #+#             */
-/*   Updated: 2024/06/05 16:03:54 by martorre         ###   ########.fr       */
+/*   Updated: 2024/06/11 13:32:21 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,25 @@
 #include <limits>
 #include <cmath>
 #include <iomanip>
+#include <cstdlib>
+
+typedef	enum	type
+{
+	_NONE = 0,
+	_CHAR,
+	_INT,
+	_DOUBLE,
+	_FLOAT,
+	_SPECIAL
+}	dataType;
 
 class ScalarConverter{
     private:
-				
-    public:
 		ScalarConverter();
 		ScalarConverter( const ScalarConverter& other );
 		ScalarConverter	&operator=(const ScalarConverter& other);
-		static void convertir(const char *literal);
 		~ScalarConverter();
+				
+    public:
+		static void convertir(const std::string& literal);
 };

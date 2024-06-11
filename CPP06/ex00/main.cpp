@@ -6,25 +6,17 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 10:39:07 by martorre          #+#    #+#             */
-/*   Updated: 2024/06/05 16:07:03 by martorre         ###   ########.fr       */
+/*   Updated: 2024/06/10 15:24:02 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
-int main() 
+int main(int argc, char **argv) 
 {
-    ScalarConverter::convertir("11234567");
-    std::cout << std::endl;
-    ScalarConverter::convertir("inf");
-    std::cout << std::endl;
-    ScalarConverter::convertir("nan");
-    std::cout << std::endl;
-    ScalarConverter::convertir("a");
-    std::cout << std::endl;
-    ScalarConverter::convertir("0");
-    std::cout << std::endl;
-    ScalarConverter::convertir("not_a_number");
-
+    if (argc == 2)
+        ScalarConverter::convertir(argv[1]);
+    else
+        std::cout << "Invalid arguments" << std::endl;
     return 0;
 }
