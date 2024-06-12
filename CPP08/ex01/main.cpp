@@ -20,7 +20,10 @@ int main()
     sp.addNumber(17);
     sp.addNumber(9);
     sp.addNumber(11);
-    std::cout << sp.shortestSpan() << std::endl;
-    std::cout << sp.longestSpan() << std::endl;
+    
+    sp.printVector();
+
+    std::cout << "The shortes Span " << sp.shortestSpan() << std::endl;
+    std::cout << "The longest Span " << sp.longestSpan() << std::endl;
     return 0;
 }

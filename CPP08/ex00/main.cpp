@@ -11,15 +11,47 @@
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
+#include <vector>
+#include <list>
 
 int main()
 {
-    int arrayints[] = {1,2,3,4,5,6,7,8,9,10,2};
+    std::vector<int> vector;
+    std::list<int> list;
+
+    for (int i = 0; i < 10; i++)
+    {
+        vector.push_back(i);
+        list.push_back(i);
+    }
+
     try
     {
-        int *arry = easyfind(arrayints, 7);
-        for (int i = 0; arry[i]; i++)
-            std::cout << arry[i] << std::endl;
+        easyfind(vector, 42);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    try
+    {
+        easyfind(vector, 4);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    try
+    {
+        easyfind(list, 42);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    try
+    {
+        easyfind(list, 2);
     }
     catch(const std::exception& e)
     {

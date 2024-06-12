@@ -11,14 +11,13 @@
 /* ************************************************************************** */
 
 #include <iostream>
+#include <algorithm>
 
 template <typename T>
-T*    easyfind(T *value, int find)
+void    easyfind(T value, int find)
 {
-    for (int i = 0; value[i]; i++)
-    {
-        if (value[i] == find)
-            return &value[i];
-    }
-    throw std::out_of_range("not found :(");
+    if (std::find(value.begin(), value.end(), find) != value.end())
+        std::cout << "founded!!! :)" << std::endl;
+    else
+        throw std::out_of_range("not found :(");
 }

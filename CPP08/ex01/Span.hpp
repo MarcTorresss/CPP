@@ -15,19 +15,22 @@
 #include <iostream>
 #include <cstring>
 #include <stdexcept>
-
+#include <vector>
+#include <algorithm>
 
 class Span{
     private:
-        unsigned int _N[];
+        unsigned int        _N;
+        std::vector<int>    _vector;
 				
     public:
-		Span();
+		Span( void );
 		Span( unsigned int );
 		Span( const Span& );
-		Span	&operator=(const Span &other);
-        void	addNumber( int );
-        int		shortestSpan();
-        int		longestSpan();
+		Span            &operator=(const Span &other);
+        void            addNumber( int );
+        unsigned int    shortestSpan( void );
+        unsigned int    longestSpan( void );
+        void            printVector( void );
 		~Span();
 };
