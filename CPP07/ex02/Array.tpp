@@ -6,12 +6,13 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:15:23 by martorre          #+#    #+#             */
-/*   Updated: 2024/06/11 17:05:19 by martorre         ###   ########.fr       */
+/*   Updated: 2024/06/12 14:25:37 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "Array.hpp"
+#include <stdio.h>
 
 template <typename T>
 Array<T>::Array()
@@ -55,6 +56,8 @@ Array<T>	&Array<T>::operator=( const Array &other )
 template <typename T>
 T&	Array<T>::operator[]( unsigned int i )
 {
+	// printf("the i = %d\n", i);
+	// printf("the n = %d\n", _n);
 	if (i >= _n)
 		throw std::out_of_range("out of bounds");
 	return _the_array[i];

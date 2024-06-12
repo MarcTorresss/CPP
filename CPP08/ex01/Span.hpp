@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/10 15:29:41 by martorre          #+#    #+#             */
-/*   Updated: 2024/06/12 14:50:03 by martorre         ###   ########.fr       */
+/*   Created: 2024/06/12 17:40:12 by martorre          #+#    #+#             */
+/*   Updated: 2024/06/12 17:53:19 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include <cstring>
+#include <stdexcept>
 
-template <typename T>
-void	swap( T& arg1, T& arg2 )
-{
-	T temp = arg2;
 
-	arg2 = arg1;
-	arg1 = temp;
-}
-
-template <typename T>
-T	max( T arg1, T arg2 )
-{
-	if (arg1 > arg2)
-		return arg1;
-	return arg2;
-}
-
-template <typename T>
-T	min( T arg1, T arg2 )
-{
-	if (arg1 < arg2)
-		return arg1;
-	return arg2;
-}
+class Span{
+    private:
+        unsigned int _N[];
+				
+    public:
+		Span();
+		Span( unsigned int );
+		Span( const Span& );
+		Span	&operator=(const Span &other);
+        void	addNumber( int );
+        int		shortestSpan();
+        int		longestSpan();
+		~Span();
+};

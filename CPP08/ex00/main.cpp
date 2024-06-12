@@ -5,26 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/10 15:29:45 by martorre          #+#    #+#             */
-/*   Updated: 2024/06/12 14:45:15 by martorre         ###   ########.fr       */
+/*   Created: 2024/06/12 17:19:33 by martorre          #+#    #+#             */
+/*   Updated: 2024/06/12 17:35:44 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "whatever.hpp"
+#include "easyfind.hpp"
 
-int main( void )
+int main()
 {
-    int a = 2;
-    int b = 3;
-    ::swap( a, b );
-    std::cout << "a = " << a << ", b = " << b << std::endl;
-    std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-    std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
-    std::string c = "chaine";
-    std::string d = "chaineeee";
-    ::swap(c, d);
-    std::cout << "c = " << c << ", d = " << d << std::endl;
-    std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
-    std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
-    return 0;
+    int arrayints[] = {1,2,3,4,5,6,7,8,9,10,2};
+    try
+    {
+        int *arry = easyfind(arrayints, 7);
+        for (int i = 0; arry[i]; i++)
+            std::cout << arry[i] << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 }

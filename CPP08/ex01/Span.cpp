@@ -1,40 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/10 15:29:41 by martorre          #+#    #+#             */
-/*   Updated: 2024/06/12 14:50:03 by martorre         ###   ########.fr       */
+/*   Created: 2024/06/12 17:40:08 by martorre          #+#    #+#             */
+/*   Updated: 2024/06/12 17:57:33 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Span.hpp"
 
-#include <iostream>
-
-template <typename T>
-void	swap( T& arg1, T& arg2 )
+Span::Span()
 {
-	T temp = arg2;
 
-	arg2 = arg1;
-	arg1 = temp;
 }
 
-template <typename T>
-T	max( T arg1, T arg2 )
+Span::Span( unsigned int N)
 {
-	if (arg1 > arg2)
-		return arg1;
-	return arg2;
+
 }
 
-template <typename T>
-T	min( T arg1, T arg2 )
+Span::Span( const Span& )
 {
-	if (arg1 < arg2)
-		return arg1;
-	return arg2;
+
+}
+
+Span	&Span::operator=(const Span &other)
+{
+
+}
+
+void	Span::addNumber( int )
+{
+
+}
+
+int		Span::shortestSpan()
+{
+
+}
+
+int		Span::longestSpan()
+{
+
+}
+
+Span::~Span()
+{
+
 }
