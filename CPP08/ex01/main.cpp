@@ -5,11 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/12 17:40:17 by martorre          #+#    #+#             */
-/*   Updated: 2024/06/12 17:47:47 by martorre         ###   ########.fr       */
+/*   Created: 2024/06/13 13:33:39 by martorre          #+#    #+#             */
+/*   Updated: 2024/06/13 17:30:11 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
+#include <list>
 #include "Span.hpp"
 
 int main()
@@ -25,5 +27,19 @@ int main()
 
     std::cout << "The shortes Span " << sp.shortestSpan() << std::endl;
     std::cout << "The longest Span " << sp.longestSpan() << std::endl;
+
+    Span sp2 = Span(10);
+
+    std::list<int> list;
+
+    for (int i = 0; i < 10; i++)
+        list.push_back(i);
+
+    sp2.addMultiNumbers(list.begin(), list.end());
+
+    sp2.printVector();
+
+    std::cout << "The shortes Span " << sp2.shortestSpan() << std::endl;
+    std::cout << "The longest Span " << sp2.longestSpan() << std::endl;
     return 0;
 }

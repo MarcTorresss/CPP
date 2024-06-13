@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 17:19:33 by martorre          #+#    #+#             */
-/*   Updated: 2024/06/12 17:35:44 by martorre         ###   ########.fr       */
+/*   Updated: 2024/06/13 11:57:49 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int main()
         vector.push_back(i);
         list.push_back(i);
     }
-
     try
     {
         easyfind(vector, 42);

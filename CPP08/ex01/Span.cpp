@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Span.cpp                                           :+:      :+:    :+:   */
+/*   Spant.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 17:40:08 by martorre          #+#    #+#             */
-/*   Updated: 2024/06/12 17:57:33 by martorre         ###   ########.fr       */
+/*   Updated: 2024/06/13 14:43:35 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	Span::printVector( void )
     std::vector<int>::iterator iter = _vector.begin();
 	while (iter != _vector.end())
     {
-		std::cout << *iter << std::endl; //vector[iter] why not??
+		std::cout << *iter << std::endl;
         iter++;
     }
 }
