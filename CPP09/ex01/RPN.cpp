@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 11:38:07 by martorre          #+#    #+#             */
-/*   Updated: 2024/07/03 13:01:11 by martorre         ###   ########.fr       */
+/*   Updated: 2024/07/04 15:52:07 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,10 @@ void	RPN::calculations(char c)
 
 void	RPN::evalExpr()
 {
-	for (size_t i = 0; i < _str.size(); ++i) {
+	for (size_t i = 0; i < _str.size(); ++i)
+	{
         char c = _str[i];
-		if (std::atoi(&c) != 0)
+		if (std::atoi(&c) != 0 || c == 48)
 			stack.push(std::atoi(&c));
 		else if (c == '+' || c == '-' || c == '*' || c == '/')
 			calculations(c);

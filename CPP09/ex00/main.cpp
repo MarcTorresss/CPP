@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 17:01:49 by martorre          #+#    #+#             */
-/*   Updated: 2024/07/02 16:22:36 by martorre         ###   ########.fr       */
+/*   Updated: 2024/07/04 15:33:20 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 #include <map>
 #include "BitcoinExchange.hpp"
 
-int main(int argc, char* argv[]) {
-    if (argc != 2) {
+int main(int argc, char* argv[])
+{
+    if (argc != 2)
+    {
         std::cerr << "Usage: " << argv[0] << " <input.txt>" << std::endl;
         return 1;
     }

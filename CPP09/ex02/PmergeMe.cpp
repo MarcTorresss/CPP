@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 13:11:30 by martorre          #+#    #+#             */
-/*   Updated: 2024/07/03 17:35:25 by martorre         ###   ########.fr       */
+/*   Updated: 2024/07/04 15:13:19 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <ctime>
 #include <vector>
 #include <deque>
-#include <iomanip>
+#include <iostream>
 
 void	merge_vector(std::vector<int> &left_merge, std::vector<int> &right_merge, std::vector<int> &vector_merge)
 {
@@ -128,20 +128,18 @@ void	start_deque(char **argv)
 		j = 0;
 		while (argv[i][j] != '\0')
 		{
-			if	(std::atoi(&argv[i][j]) == 0)
+			if	(std::atoi(&argv[i][j]) == 0 && argv[i][j] != 48)
 				throw std::invalid_argument("Is not a number :(");
 			j++;
 		}
 		deque.push_back(std::atoi(argv[i]));
 		i++;
 	}
-	std::clock_t end = std::clock();
-    // Calcular el tiempo de CPU transcurrido en segundos
-    double elapsed_time = static_cast<double>(end - start) / CLOCKS_PER_SEC;
-    // Convertir el tiempo transcurrido a microsegundos
-    double elapsed_time_us = elapsed_time * 1e6;
-    // Mostrar el tiempo transcurrido en el formato
-    std::cout << "Time to process a range of " << deque.size() << " elements with std::[..] : " << std::fixed << std::setprecision(5) << elapsed_time_us << " us" << std::endl;
+	if (deque.size() < 15)
+		merge_insertion_sort(deque, deque.size());
+	else
+		merge_sort_deque(deque);
+	print_time(start, deque, 'd');
 }
 
 void	start_vector(char **argv)
@@ -155,7 +153,7 @@ void	start_vector(char **argv)
 		j = 0;
 		while (argv[i][j] != '\0')
 		{
-			if	(std::atoi(&argv[i][j]) == 0)
+			if	(std::atoi(&argv[i][j]) == 0 && argv[i][j] != 48)
 				throw std::invalid_argument("Is not a number :(");
 			j++;
 		}
@@ -163,29 +161,15 @@ void	start_vector(char **argv)
 		i++;
 	}
 	std::cout << "Before:\t";
-	std::vector<int>::iterator it;
-    for (it = vector.begin(); it != vector.end(); ++it)
-	{
-    	std::cout << *it << ' ';
-	}
+	print_container(vector);
 
-	std::cout << std::endl;
-
-	merge_sort_vector(vector);
+	if (vector.size() < 15)
+		merge_insertion_sort(vector, vector.size());
+	else
+		merge_sort_vector(vector);
 
 	std::cout << "After:\t";
-	std::vector<int>::iterator itt;
-    for (itt = vector.begin(); itt != vector.end(); ++itt)
-	{
-    	std::cout << *itt << ' ';
-	}
-
+	print_container(vector);
 	std::cout << std::endl;
-	std::clock_t end = std::clock();
-    // Calcular el tiempo de CPU transcurrido en segundos
-    double elapsed_time = static_cast<double>(end - start) / CLOCKS_PER_SEC;
-    // Convertir el tiempo transcurrido a microsegundos
-    double elapsed_time_us = elapsed_time * 1e6;
-    // Mostrar el tiempo transcurrido en el formato
-    std::cout << "Time to process a range of " << vector.size() << " elements with std::[..] : " << std::fixed << std::setprecision(5) << elapsed_time_us << " us" << std::endl;
+	print_time(start, vector, 'v');
 }

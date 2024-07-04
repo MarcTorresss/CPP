@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 11:33:57 by martorre          #+#    #+#             */
-/*   Updated: 2024/07/02 17:34:10 by martorre         ###   ########.fr       */
+/*   Updated: 2024/07/04 16:05:34 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,6 @@ BitcoinExchange::BitcoinExchange()
 
 }
 
-BitcoinExchange::BitcoinExchange(const BitcoinExchange&)
-{
-
-}
-
-BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& other)
-{
-    // if (this == &other)
-    // 	return *this;
-	(void) other;
-	return *this;
-}
-
 BitcoinExchange::~BitcoinExchange()
 {
 
@@ -47,11 +34,9 @@ bool operator<(const struct tm& t1, const struct tm& t2)
 	if (t1.tm_year < t2.tm_year) return true;
     if (t1.tm_year > t2.tm_year) return false;
 
-    // Then compare months
     if (t1.tm_mon < t2.tm_mon) return true;
     if (t1.tm_mon > t2.tm_mon) return false;
 	
-    // Finally compare days
     return t1.tm_mday < t2.tm_mday;
 }
 

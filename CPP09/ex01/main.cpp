@@ -6,7 +6,7 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 12:11:47 by martorre          #+#    #+#             */
-/*   Updated: 2024/07/03 13:00:17 by martorre         ###   ########.fr       */
+/*   Updated: 2024/07/04 15:47:36 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,14 @@ int main(int argc, char **argv)
         std::cout << "Usage: ./eval_expr \"expression\"" << std::endl;
         return 1;
     }
-    RPN rpn(argv[1]);
     try 
     {
+        RPN rpn(argv[1]);
         rpn.evalExpr();
     }
     catch(std::exception &e)
     {
         std::cerr << e.what() << std::endl;
     }
-    
     return 0;
 }

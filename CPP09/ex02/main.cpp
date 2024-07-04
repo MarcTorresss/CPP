@@ -6,11 +6,13 @@
 /*   By: martorre <martorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 13:21:30 by martorre          #+#    #+#             */
-/*   Updated: 2024/07/03 17:34:34 by martorre         ###   ########.fr       */
+/*   Updated: 2024/07/04 15:12:04 by martorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
+#include <vector>
+#include <deque>
 
 int main(int argc, char **argv)
 {

@@ -1,5 +1,5 @@
 
-vector/* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
@@ -25,8 +25,6 @@ class BitcoinExchange{
     
     public:
 		BitcoinExchange();
-		BitcoinExchange( const BitcoinExchange& );
-		BitcoinExchange	&operator=(const BitcoinExchange &other);
 		bool	parseFileToMap(std::string& filename, std::map<struct tm, float>& dataMap);
 		bool	parseEleCalc(std::string& filename, std::map<struct tm, float>& dataMap);
 		bool	calculateValue(std::map<struct tm, float>& dataMap, struct tm date , float value );
